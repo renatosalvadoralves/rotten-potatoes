@@ -56,7 +56,8 @@ spec:
     spec: 
       containers:
       - name: web
-        image: 04041994/rotten-potatoes:latest
+        image: 04041994/rotten-potatoes:v2
+        imagePullPolicy: Always
         ports:
         - containerPort: 5000
         env:
@@ -83,9 +84,9 @@ spec:
   selector: 
     app: web
   ports:
-    - port: 80
-      targetPort: 5000
-      nodePort: 30000
+  - port: 80
+    targetPort: 5000
+    nodePort: 30000
   type: NodePort
 
 
